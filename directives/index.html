@@ -10,6 +10,17 @@
   </head>
   <body>
     <div ng-controller="MoviesController as movies">
+      <div class="likes">
+        <p>
+          Beata's likes list
+        </p>
+        <ul>
+          <li ng-repeat="like in movies.likesList">
+            <p>{{ like.title }}</p>
+            <a href="" ng-click="movies.unlike($index);">Unlike!</a>
+          </li>
+        </ul>
+      </div>
       <ul>
         <li
           ng-class="{
@@ -23,6 +34,7 @@
             {{ movie.title }}
           </a>
           <p>{{ movie.title }} {{$index}}</p>
+          <a href="" ng-click="movies.addToLikes(movie);">Like this movie</a>
           <p>Released in: {{movie.year}}</p>
           <input type="text" ng-model="movie.year">
           <p ng-show="movie.popular">This movie is popular!</p>
