@@ -18,6 +18,10 @@
             new: movie.year > 2000
           }"
           ng-repeat="movie in movies.favorites">
+          <img ng-src="//ia.media-imdb.com/images/{{movie.img}}" alt="poster" />
+          <a ng-href="//imdb.com/title/{{movie.imdb}}" target="_blank">
+            {{ movie.title }}
+          </a>
           <p>{{ movie.title }} {{$index}}</p>
           <p>Released in: {{movie.year}}</p>
           <input type="text" ng-model="movie.year">
