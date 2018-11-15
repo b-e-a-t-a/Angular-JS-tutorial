@@ -10,6 +10,29 @@
   </head>
   <body>
     <div ng-controller="MoviesController as movies">
+      <form ng-submit="movies.addMovie();">
+        <p>
+          Add a movie
+        </p>
+        <input
+          type="text"
+          placeholder="Title"
+          ng-focus="movies.onFocus();"
+          ng-blur="movies.onBlur();"
+          ng-model="movies.newTitle"
+        >
+        <input
+          type="text"
+          placeholder="Release year"
+          ng-model="movies.newRelease"
+        >
+        <button type="submit">
+          Add new movie!
+        </button>
+      </form>
+
+      <!-- ng-click
+
       <div class="likes">
         <p>
           Beata's likes list
@@ -21,6 +44,9 @@
           </li>
         </ul>
       </div>
+
+      -->
+
       <ul>
         <li
           ng-class="{

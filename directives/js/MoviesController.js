@@ -1,4 +1,19 @@
 function MoviesController() {
+  this.newTitle = ''; //public property
+  this.newRelease = '';
+  this.onFocus = function () {
+    console.log('Focus!');
+  };
+  this.onBlur = function () {
+    console.log('Blur!');
+  };
+  this.addMovie = function () {
+    this.favorites.unshift({
+      title: this.newTitle,
+      year: this.newRelease
+    })
+  };
+  /*
   this.likesList = [];
   this.unlike = function (index) {
     this.likesList.splice(index, 1)
@@ -6,6 +21,7 @@ function MoviesController() {
   this.addToLikes = function (movie) {
     this.likesList.push(movie);
   };
+  */
   this.favorites = [{
     title: "Shawshank",
     year: "1994",
