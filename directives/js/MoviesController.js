@@ -1,6 +1,9 @@
 function MoviesController() {
   this.newTitle = ''; //public property
   this.newRelease = '';
+  this.onChange = function () {
+    console.log('Change!', this.newRelease);
+  };
   this.onFocus = function () {
     console.log('Focus!');
   };

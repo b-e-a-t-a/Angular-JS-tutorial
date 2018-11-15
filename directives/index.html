@@ -25,6 +25,7 @@
           type="text"
           placeholder="Release year"
           ng-model="movies.newRelease"
+          ng-change="movies.onChange();"
         >
         <button type="submit">
           Add new movie!
