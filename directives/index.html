@@ -47,6 +47,9 @@
       </div>
 
       -->
+      <!-- filtering with order By -->
+      <a href="" ng-click="type = 'year'">Year</a>
+      <a href="" ng-click="type = 'title'">Title</a>
 
       <ul>
         <li
@@ -55,7 +58,7 @@
             modern: movie.year > 1995 && movie.year < 2000,
             new: movie.year > 2000
           }"
-          ng-repeat="movie in movies.favorites">
+          ng-repeat="movie in movies.favorites | orderBy: type">
           <img ng-src="//ia.media-imdb.com/images/{{movie.img}}" alt="poster" />
           <a ng-href="//imdb.com/title/{{movie.imdb}}" target="_blank">
             {{ movie.title }}
