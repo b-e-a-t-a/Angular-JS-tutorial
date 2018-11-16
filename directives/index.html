@@ -54,7 +54,7 @@
       <!-- searching -->
       <input
         type="text"
-        placeholder="Type a search!"
+        placeholder="Search by year"
         ng-model="search">
       <ul>
         <li
@@ -63,7 +63,7 @@
             modern: movie.year > 1995 && movie.year < 2000,
             new: movie.year > 2000
           }"
-          ng-repeat="movie in movies.favorites | filter: search">
+          ng-repeat="movie in movies.favorites | filter: { year: search }">
           <img ng-src="//ia.media-imdb.com/images/{{movie.img}}" alt="poster" />
           <a ng-href="//imdb.com/title/{{movie.imdb}}" target="_blank">
             {{ movie.title }}
