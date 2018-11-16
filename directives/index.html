@@ -51,6 +51,11 @@
       <a href="" ng-click="type = 'year'">Year</a>
       <a href="" ng-click="type = 'title'">Title</a>
 
+      <!-- searching -->
+      <input
+        type="text"
+        placeholder="Type a search!"
+        ng-model="search">
       <ul>
         <li
           ng-class="{
@@ -58,7 +63,7 @@
             modern: movie.year > 1995 && movie.year < 2000,
             new: movie.year > 2000
           }"
-          ng-repeat="movie in movies.favorites | orderBy: type">
+          ng-repeat="movie in movies.favorites | filter: search">
           <img ng-src="//ia.media-imdb.com/images/{{movie.img}}" alt="poster" />
           <a ng-href="//imdb.com/title/{{movie.imdb}}" target="_blank">
             {{ movie.title }}
