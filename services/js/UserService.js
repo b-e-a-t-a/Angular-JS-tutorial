@@ -2,16 +2,24 @@ function UserService($http) {
   const prefix = 'https://cors-anywhere.herokuapp.com/';
   const API = '//jsonplaceholder.typicode.com/users/';
 
-  this.getUser = function (userId) {
+  function getUser(userId) {
     return $http
       .get(prefix + API + userId)
       .then(function (response) {
         return response.data;
       }, function (reason) {
       })
+  }
+  function getAllUsers() {
+
+  }
+
+  return {
+    getUser: getUser,
+    getAllUsers: getAllUsers
   };
 }
 
 angular
   .module('app')
-  .service('UserService', UserService);
+  .factory('UserService', UserService);
