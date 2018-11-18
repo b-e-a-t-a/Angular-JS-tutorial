@@ -1,4 +1,5 @@
 function OrderController () {
+  this.orderName = 'Coca-cola';
   this.orderQuantity = 5;
 }
 
