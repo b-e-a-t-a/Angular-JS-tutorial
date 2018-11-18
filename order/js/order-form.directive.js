@@ -8,11 +8,22 @@ function orderForm() {
     },
     controller: 'OrderFormController as form',
     template: `
-      <pre>{{ orderForm | json }}</pre>
-      
+
       <form name="orderForm" novalidate ng-submit="form.onSubmit();">
         <input name="name" required="" type="text" ng-model="form.data.name" placeholder="Your name">
+        <div ng-show="orderForm.name.$error.required && orderForm.name.$touched">
+          Name is required!
+        </div>
+
         <input name="email" required="" type="email" ng-model="form.data.email" placeholder="Your email">
+        <div ng-show="orderForm.email.$error.required && orderForm.email.$touched">
+          Email is required!
+        </div>
+        <div
+          ng-show="orderForm.email.$error.email && orderForm.email.$touched">
+          E-mail is invalid!
+        </div>
+
         <input name="location" required="" type="text" ng-model="form.data.location" placeholder="Your location">
         <select
           name="orderChoice"
