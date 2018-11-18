@@ -1,6 +1,8 @@
 function counter() {
   return {
-    scope: {}, //each one has its own scope
+    scope: {
+      count: '=' //'=count'
+    },
     restrict: 'E', //custom element
     controller: 'CounterController as counter', //instead of ng-controller we can bind it straight here
     template: `
