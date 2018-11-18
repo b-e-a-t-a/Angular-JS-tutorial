@@ -9,8 +9,7 @@ function orderForm() {
     controller: 'OrderFormController as form',
     template: `
       <pre>{{ orderForm | json }}</pre>
-      <pre>{{ orderForm.orderChoice | json }}</pre>
-      <pre>{{ form.data | json }}</pre>
+      
       <form name="orderForm" novalidate ng-submit="form.onSubmit();">
         <input name="name" required="" type="text" ng-model="form.data.name" placeholder="Your name">
         <input name="email" required="" type="email" ng-model="form.data.email" placeholder="Your email">
@@ -22,8 +21,8 @@ function orderForm() {
           ng-options="product.label for product in form.products">
           <option value="">Select...</option>
         </select>
-        <textarea name="comments" required="" ng-model="form.data.comments" placeholder="Any messages (optional)"></textarea>
-        <button type="submit">
+        <textarea name="comments" ng-model="form.data.comments" placeholder="Any messages (optional)"></textarea>
+        <button type="submit" ng-disabled="orderForm.$invalid">
           Order
         </button>
       </form>

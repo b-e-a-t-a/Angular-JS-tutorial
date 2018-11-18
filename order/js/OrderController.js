@@ -14,7 +14,7 @@ function OrderController () {
     //flow:
 //we have a top-level OrderController, we pass it data that we want called customerOrder into the delegating form
 //the form would then manipulate the data and when we submit inside the other form directive, we can then call this parent submitOrder
-    console.log('Submited');
+    console.log('Submited', this.customerOrder);
   };
 }
 
